@@ -1,0 +1,174 @@
+.news10-news-list li .news10-list-img img{
+    height: 100px;
+}
+body{
+    margin-top: -2px !important;
+}
+.news10-stories-categories-section .news10-ctg-card img{
+    height: 215px;
+}
+.navbar_fixed .news10-header-wrapper{
+    border: none;
+}
+.navbar_fixed{
+    max-width: 100%;
+}
+.post-archive .news10-news-list li p{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.post-archive .news10-news-list li .news10-list-img img{
+    height: 210px;
+}
+.card{
+    overflow: hidden;
+}
+.news10-food-categories-wrapper .news10-food-card .card-thumb img{
+    height: 330px;
+}
+.news10-food-card .news10-food-card-body .card-title{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+.news10-food-card .news10-food-card-body p{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+.news10-food-latest-posts-section .card.news10-sm-food-card .card-thumb img{
+    height: 270px;
+}
+.news10-top-categories-section.news10-slide .news10-card-img img{
+    height: 170px;
+}
+.news10-top-categories-section.news10-slide .news10-card-img{
+    margin: 0;
+    max-width: 270px;
+}
+.news10-video-news-slide .card.news10-default-post{
+    max-width: 560px;
+}
+.news10-video-news-slide .card.news10-default-post .news10-post-img img{
+    height: 290px;
+}
+.news10-miss-slide-wraper .card.news10-card-img{
+    max-width: 290px;
+}
+.news10-miss-slide-wraper .card.news10-card-img img{
+    height: 350px;
+}
+.social-link-wrapper .news10-social-link{
+    position: unset !important;
+}
+.news10-bannar-siderbar{
+    justify-content: center !important;
+}
+.news10-bannar-siderbar .search-bar{
+    position: absolute;
+    top: 0;
+}
+.news10-featured-slide-wrapper .news10-featured-categorie img{
+    height: 470px;
+}
+.fashion-blog-ctg .post-item-thumb img{
+    height: 315px;
+    object-fit: cover;
+}
+.news10-sm-post-categories{
+    margin-top: 30px;
+}
+.news10-sm-post-categories .news10-post-content .title{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.news10-top-bar .news10-news-slide h6{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+}
+.news10-sm-single-post .post-thumb img{
+    width: 80px;
+}
+.video-grid .big-wide .news10-post-img img{
+    height: 550px;
+}
+.news10-sm-post-categories .post-thumb img{
+    height: 160px;
+    object-fit: cover;
+}
+.news10-instagram-wraper .ctg-items img{
+    height: 110px;
+}
+.card .news10-card-body .news10-text ul ~ h4{
+    margin-bottom: 0;
+}
+.news10-latest-technology .news10-row-slide .news10-default-post{
+    margin: 0;
+}
+.news10-gadgets-slide-wraper .news10-card-img img{
+    height: 360px;
+}
+.news10-list-post .news10-news-list li .news10-list-img img{
+    height: 220px;
+    object-fit: cover;
+}
+.news10-list-post .news10-accessories li .news10-list-img img{
+    height: 100px;
+    object-fit: cover;
+}
+.post-category-items .post-item-thumb .post-content .post-author-date span{
+    color: #fff;
+}
+.news10-sm-post-categories .news10-post-content .post-author-date span {
+    color: #707070;
+}
+.news10-fashion-testimonials-content .content-wrapper .news10-meta-info .post-author-date span{
+    color: #707070;
+}
+.news10-news-categories-post .news10-post-content .post-author-date span{
+    color: #707070;
+}
+.news10-featured-categorie .news10-ctg-content .post-author-date span{
+    color: #fff;
+}
+
+
+
+
+@media(min-width:992px){
+    .news10-gadgets-slide-wraper .swiper-slide{
+        max-width: 360px;
+    }
+    .news10-latest-technology .news10-row-slide .news10-default-post{
+        max-width: 250px;
+    }
+    .news10-featured-slide-wrapper .news10-featured-categorie {
+        max-width: 360px;
+    }
+    .news10-post-categories-wrapper .post-category-items .post-item-thumb img{
+        height: 820px;
+        object-fit: cover;
+    }
+    .news10-cetegoris-top-slide .news10-post-categories .post-item-thumb img{
+        height: 530px;
+        object-fit: cover;
+    }
+
+    .news10-trading-news-slide .swiper-slide{
+        max-width: 360px;
+    }
+}

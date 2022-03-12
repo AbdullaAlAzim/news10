@@ -1,0 +1,37 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?3572eeb9774186029f8e8d3da1092814") format("truetype"),
+url("./flaticon.woff?3572eeb9774186029f8e8d3da1092814") format("woff"),
+url("./flaticon.woff2?3572eeb9774186029f8e8d3da1092814") format("woff2"),
+url("./flaticon.eot?3572eeb9774186029f8e8d3da1092814#iefix") format("embedded-opentype"),
+url("./flaticon.svg?3572eeb9774186029f8e8d3da1092814#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "menu": "\f101",
+    "like": "\f102",
+    "chat-comment-oval-speech-bubble-with-text-lines": "\f103",
+);
+
+.flaticon-menu:before {
+    content: map-get($flaticon-map, "menu");
+}
+.flaticon-like:before {
+    content: map-get($flaticon-map, "like");
+}
+.flaticon-chat-comment-oval-speech-bubble-with-text-lines:before {
+    content: map-get($flaticon-map, "chat-comment-oval-speech-bubble-with-text-lines");
+}
