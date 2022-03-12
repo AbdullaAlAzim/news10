@@ -54,7 +54,7 @@ if (!function_exists('news10_setup')) {
         register_nav_menus(array(
             'primary' => esc_html__('Primary', 'news10'),
         ));
- 
+
         add_theme_support('wp-block-styles');
         add_theme_support('align-wide');
         /*
@@ -68,7 +68,7 @@ if (!function_exists('news10_setup')) {
             'gallery',
             'caption',
             'script',
-            'style'
+            'style',
         ));
         // Set up the WordPress core custom background feature.
         add_theme_support('custom-background', apply_filters('news10_background_args', array(
@@ -81,8 +81,8 @@ if (!function_exists('news10_setup')) {
 
         //post formats
 
-        add_theme_support( 'post-formats', array('video') );
- 
+        add_theme_support('post-formats', array('video'));
+
     }
 }
 add_action('after_setup_theme', 'news10_setup');
@@ -120,8 +120,7 @@ function news10_widgets_init()
         'after_title' => '</div></h2>',
     ));
 
-
-       register_sidebar(array(
+    register_sidebar(array(
         'name' => esc_html__('Inner-sidebar', 'news10'),
         'id' => 'sidebar-2',
         'description' => esc_html__('Add widgets here.', 'news10'),
@@ -179,39 +178,32 @@ function news10_fonts_url()
     return $fonts_url;
 }
 
-
 /**
  * Enqueue scripts and styles.
  */
 function news10_scripts()
 {
     //css style
-    wp_enqueue_style ('news10-fonts', news10_fonts_url());
-    
+    wp_enqueue_style('news10-fonts', news10_fonts_url());
 
+    wp_enqueue_style('news10-bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
+    wp_enqueue_style('news10-flaticon', get_template_directory_uri() . '/assets/fonts/flaticon/flaticon.css');
 
-    wp_enqueue_style ('news10-bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
-    wp_enqueue_style ('news10-flaticon', get_template_directory_uri() . '/assets/fonts/flaticon/flaticon.css');
-    
-    wp_enqueue_style ('news10-fontawesome', get_template_directory_uri() . '/assets/fonts/fontawesome/css/fontawesome-all.min.css');
+    wp_enqueue_style('news10-fontawesome', get_template_directory_uri() . '/assets/fonts/fontawesome/css/fontawesome-all.min.css');
 
-    wp_enqueue_style ('news10-defaultt', get_template_directory_uri() . '/assets/css/news10-default.css');
-    
+    wp_enqueue_style('news10-defaultt', get_template_directory_uri() . '/assets/css/news10-default.css');
 
-    wp_enqueue_style ('news10-responsive', get_template_directory_uri() . '/assets/css/responsive.css');
-    
+    wp_enqueue_style('news10-responsive', get_template_directory_uri() . '/assets/css/responsive.css');
 
-    wp_enqueue_style ('news10-select', get_template_directory_uri() . '/assets/css/nice-select.css');
-    
+    wp_enqueue_style('news10-select', get_template_directory_uri() . '/assets/css/nice-select.css');
 
-    wp_enqueue_style ('news10-main', get_template_directory_uri() . '/assets/css/style.css');
- 
+    wp_enqueue_style('news10-main', get_template_directory_uri() . '/assets/css/style.css');
+
     wp_enqueue_style('news10-new', get_template_directory_uri() . '/assets/css/new.css');
-    
+
     wp_enqueue_style('news10-default', get_template_directory_uri() . '/assets/css/default.css');
-   
+
     wp_enqueue_style('news10', get_stylesheet_uri());
-   
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -220,28 +212,20 @@ function news10_scripts()
     //js style
     wp_enqueue_style('dashicons');
 
-    wp_enqueue_script ('news10-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array('jquery'), news10_theme_version(), true);
+    wp_enqueue_script('news10-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array('jquery'), news10_theme_version(), true);
 
+    wp_enqueue_script('news10-imagesloadedd', get_template_directory_uri() . '/assets/js/imagesloaded.pkgd.min.js', array('jquery'), news10_theme_version(), true);
 
-    wp_enqueue_script ('news10-imagesloadedd', get_template_directory_uri() . '/assets/js/imagesloaded.pkgd.min.js', array('jquery'), news10_theme_version(), true);
-    
+    wp_enqueue_script('news10-isotopee', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', array('jquery'), news10_theme_version(), true);
 
-    wp_enqueue_script ('news10-isotopee', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', array('jquery'), news10_theme_version(), true);
-    
+    wp_enqueue_script('news10-counterupp', get_template_directory_uri() . '/assets/js/counterup.min.js', array('jquery'), news10_theme_version(), true);
 
-    wp_enqueue_script ('news10-counterupp', get_template_directory_uri() . '/assets/js/counterup.min.js', array('jquery'), news10_theme_version(), true);
-        
+    wp_enqueue_script('news10-venoboxx', get_template_directory_uri() . '/assets/js/venobox.min.js', array('jquery'), news10_theme_version(), true);
 
-    wp_enqueue_script ('news10-venoboxx', get_template_directory_uri() . '/assets/js/venobox.min.js', array('jquery'), news10_theme_version(), true);
-    
-    wp_enqueue_script ('news10-themeee', get_template_directory_uri() . '/assets/js/theme.js', array('jquery'), news10_theme_version(), true);
-   
-
+    wp_enqueue_script('news10-themeee', get_template_directory_uri() . '/assets/js/theme.js', array('jquery'), news10_theme_version(), true);
 
 }
 add_action('wp_enqueue_scripts', 'news10_scripts', 99);
-
-
 
 function news10_admin_css()
 {
@@ -273,44 +257,45 @@ require_once get_template_directory() . '/inc/plugin-recommendations.php';
 require_once get_template_directory() . '/inc/comment-template.php';
 
 // custom image size
-add_image_size('news10-point-170-126', 170, 126, true );
-add_image_size('news10-point-558-328', 558, 328, true );
-add_image_size('news10-point-270-160', 270, 160, true );
-add_image_size('news10-point-815-891', 815, 891, true );
-add_image_size('news10-point-570-540', 570, 540, true );
-add_image_size('news10-point-270-160', 270, 160, true );
-add_image_size('news10-point-370-484', 370, 484, true );
-add_image_size('news10-point-770-321', 770, 321, true );
-add_image_size('news10-point-370-205', 370, 205, true );
-add_image_size('news10-point-127-98',  127, 98, true );
-add_image_size('news10-point-510-283', 510, 283, true );
-add_image_size('news10-point-240-140', 240, 140, true );
-add_image_size('news10-point-570-413', 570, 413, true );
-add_image_size('news10-point-270-154', 270, 154, true );
-add_image_size('news10-point-320-400', 320, 400, true );
-add_image_size('news10-point-122-122', 122, 122, true );
-add_image_size('news10-point-306-174', 306, 174, true );
-add_image_size('news10-point-270-183', 270, 183, true );
-add_image_size('news10-point-570-299', 570, 299, true );
-add_image_size('news10-point-270-422', 270, 422, true );
-add_image_size('news10-point-370-238', 370, 238, true );
-add_image_size('news10-point-122-122', 122, 122, true );
-add_image_size('news10-point-170-131', 170, 131, true );
-add_image_size('news10-point-770-426', 770, 426, true );
-add_image_size('news10-point-80-80',   80, 80, true );
-add_image_size('news10-point-306-306',   306, 306, true );
+add_image_size('news10-point-170-126', 170, 126, true);
+add_image_size('news10-point-558-328', 558, 328, true);
+add_image_size('news10-point-270-160', 270, 160, true);
+add_image_size('news10-point-815-891', 815, 891, true);
+add_image_size('news10-point-570-540', 570, 540, true);
+add_image_size('news10-point-270-160', 270, 160, true);
+add_image_size('news10-point-370-484', 370, 484, true);
+add_image_size('news10-point-770-321', 770, 321, true);
+add_image_size('news10-point-370-205', 370, 205, true);
+add_image_size('news10-point-127-98', 127, 98, true);
+add_image_size('news10-point-510-283', 510, 283, true);
+add_image_size('news10-point-240-140', 240, 140, true);
+add_image_size('news10-point-570-413', 570, 413, true);
+add_image_size('news10-point-270-154', 270, 154, true);
+add_image_size('news10-point-320-400', 320, 400, true);
+add_image_size('news10-point-122-122', 122, 122, true);
+add_image_size('news10-point-306-174', 306, 174, true);
+add_image_size('news10-point-270-183', 270, 183, true);
+add_image_size('news10-point-570-299', 570, 299, true);
+add_image_size('news10-point-270-422', 270, 422, true);
+add_image_size('news10-point-370-238', 370, 238, true);
+add_image_size('news10-point-122-122', 122, 122, true);
+add_image_size('news10-point-170-131', 170, 131, true);
+add_image_size('news10-point-770-426', 770, 426, true);
+add_image_size('news10-point-80-80', 80, 80, true);
+add_image_size('news10-point-306-306', 306, 306, true);
 
 /*
  * Set post views count using post meta
  */
-function setPostViews($postID) {
+function setPostViews($postID)
+{
     $countKey = 'post_views_count';
     $count = get_post_meta($postID, $countKey, true);
-    if($count==''){
+    if ($count == '') {
         $count = 0;
         delete_post_meta($postID, $countKey);
         add_post_meta($postID, $countKey, '0');
-    }else{
+    } else {
         $count++;
         update_post_meta($postID, $countKey, $count);
     }
@@ -334,16 +319,16 @@ add_filter('comment_form_submit_button', 'custom_submit_comment_form');
 
 /**
  * Moving the comments text field to bottom
- * 
+ *
  */
-function plus_point_move_comment( $fields ) {
-    $comment_field = $fields[ 'comment' ];
-    unset( $fields[ 'comment' ] );
-    $fields[ 'comment' ] = $comment_field;
+function plus_point_move_comment($fields)
+{
+    $comment_field = $fields['comment'];
+    unset($fields['comment']);
+    $fields['comment'] = $comment_field;
     return $fields;
 }
-add_filter( 'comment_form_fields', 'plus_point_move_comment' );
-
+add_filter('comment_form_fields', 'plus_point_move_comment');
 
 add_action('wp_enqueue_scripts', 'pt_like_it_scripts');
 function pt_like_it_scripts()
@@ -397,4 +382,5 @@ function like_it_button_html($content)
                   ';
     return $content . $like_text;
 }
+
 
